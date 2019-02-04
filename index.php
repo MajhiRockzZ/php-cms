@@ -5,7 +5,7 @@
 
 
 <!-- Page Content -->
-<2div class="container">
+<div class="container">
 
     <div class="row">
 
