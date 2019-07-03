@@ -6,14 +6,15 @@
         <form action="search.php" method="post">
             <div class="input-group">
                 <span class="input-group-btn">
-                <input name="search" type="text" class="form-control">
+                    <input name="search" type="text" class="form-control">
                     <button name="submit" class="btn btn-default" type="submit">
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </span>
             </div>
         </form> <!-- Search Form -->
-        <!-- /.input-group -->    </div>
+        <!-- /.input-group -->
+    </div>
 
 
     <!-- Blog Categories Well -->
