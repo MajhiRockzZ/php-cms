@@ -33,13 +33,13 @@
                         </form>
 
                         <?php
-            // UPDATE AND INCLUDE QUERY
-            if (isset($_GET['edit'])) {
-              $cat_id = $_GET['edit'];
+                        // UPDATE AND INCLUDE QUERY
+                        if (isset($_GET['edit'])) {
+                            $cat_id = $_GET['edit'];
 
-              include "includes/update_categories.php";
-            }
-            ?>
+                            include "includes/update_categories.php";
+                        }
+                        ?>
 
 
                     </div> <!-- Add Category Form -->
