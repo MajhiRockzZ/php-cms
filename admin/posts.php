@@ -30,8 +30,8 @@
               include "includes/add_post.php";
               break;
 
-            case '100';
-              echo "NICE 100";
+            case 'edit_post';
+              include "includes/edit_post.php";
               break;
 
             case '200';
@@ -43,7 +43,7 @@
               break;
           }
 
-          
+
           ?>
 
         </div>
