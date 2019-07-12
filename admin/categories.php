@@ -1,6 +1,6 @@
 <?php include "includes/admin_header.php" ?>
 
-<div id="wrapper">
+    <div id="wrapper">
 
     <!-- Navigation -->
 
@@ -47,16 +47,16 @@
                     <div class="col-xs-6">
                         <table class="table table-bordered table-hover">
                             <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Category Title</th>
-                                </tr>
+                            <tr>
+                                <th>Id</th>
+                                <th>Category Title</th>
+                            </tr>
                             </thead>
                             <tbody>
 
-                                <?php findAllCategories(); ?>
+                            <?php findAllCategories(); ?>
 
-                                <?php delete_categories(); ?>
+                            <?php delete_categories(); ?>
 
                             </tbody>
                         </table>
@@ -71,4 +71,4 @@
 
     </div>
     <!-- /#page-wrapper -->
-    <?php include "includes/admin_footer.php" ?>
+<?php include "includes/admin_footer.php" ?>

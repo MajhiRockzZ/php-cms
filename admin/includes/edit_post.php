@@ -36,7 +36,7 @@ if (isset($_POST['update_post'])) {
         $query = "SELECT * FROM posts WHERE post_id = $the_post_id";
         $select_image = mysqli_query($connection, $query);
 
-        while($row = mysqli_fetch_array($select_image)) {
+        while ($row = mysqli_fetch_array($select_image)) {
             $post_image = $row['post_image'];
         }
     }
@@ -106,7 +106,8 @@ if (isset($_POST['update_post'])) {
 
     <div class="form-group">
         <label for="post_content">Post Content</label>
-        <textarea class="form-control" name="post_content" id="" cols="30" rows="10"><?php echo $post_content; ?></textarea>
+        <textarea class="form-control" name="post_content" id="" cols="30"
+                  rows="10"><?php echo $post_content; ?></textarea>
     </div>
 
     <div class="form-group">

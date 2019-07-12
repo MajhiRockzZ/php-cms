@@ -1,6 +1,6 @@
 <?php include "includes/admin_header.php" ?>
 
-<div id="wrapper">
+    <div id="wrapper">
 
     <!-- Navigation -->
 
@@ -31,4 +31,4 @@
 
     </div>
     <!-- /#page-wrapper -->
-    <?php include "includes/admin_footer.php" ?>
+<?php include "includes/admin_footer.php" ?>
