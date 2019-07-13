@@ -39,7 +39,7 @@
                             break;
 
                         default:
-                            include "includes/view_all_comments.php";
+                            include "includes/view_all_users.php";
                             break;
                     }
 
