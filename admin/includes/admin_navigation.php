@@ -65,7 +65,7 @@
                 </ul>
             </li>
             <li>
-                <a href="bootstrap-grid.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+                <a href="profile.php"><i class="fa fa-fw fa-user"></i> Profile</a>
             </li>
         </ul>
     </div>
