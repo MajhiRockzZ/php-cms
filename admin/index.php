@@ -34,11 +34,11 @@
                                 <div class="col-xs-9 text-right">
                                     <?php
                                     $query = "SELECT * FROM posts";
-                                    $select_all_post = mysqli_query($connection, $query);
+                                    $select_all_posts = mysqli_query($connection, $query);
 
-                                    $post_counts = mysqli_num_rows($select_all_post);
+                                    $post_count = mysqli_num_rows($select_all_posts);
 
-                                    echo "<div class='huge'>{$post_counts}</div>";
+                                    echo "<div class='huge'>{$post_count}</div>";
                                     ?>
                                     <div>Posts</div>
                                 </div>
@@ -61,7 +61,14 @@
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class='huge'>23</div>
+                                    <?php
+                                    $query = "SELECT * FROM comments";
+                                    $select_all_comments = mysqli_query($connection, $query);
+
+                                    $comment_count = mysqli_num_rows($select_all_comments);
+
+                                    echo "<div class='huge'>{$comment_count}</div>";
+                                    ?>
                                     <div>Comments</div>
                                 </div>
                             </div>
@@ -83,7 +90,14 @@
                                     <i class="fa fa-user fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class='huge'>23</div>
+                                    <?php
+                                    $query = "SELECT * FROM users";
+                                    $select_all_users = mysqli_query($connection, $query);
+
+                                    $user_count = mysqli_num_rows($select_all_users);
+
+                                    echo "<div class='huge'>{$user_count}</div>";
+                                    ?>
                                     <div> Users</div>
                                 </div>
                             </div>
@@ -105,7 +119,14 @@
                                     <i class="fa fa-list fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class='huge'>13</div>
+                                    <?php
+                                    $query = "SELECT * FROM categories";
+                                    $select_all_categories = mysqli_query($connection, $query);
+
+                                    $category_count = mysqli_num_rows($select_all_categories);
+
+                                    echo "<div class='huge'>{$category_count}</div>";
+                                    ?>
                                     <div>Categories</div>
                                 </div>
                             </div>
