@@ -17,6 +17,7 @@
 
         <thead>
         <tr>
+            <th><input id="selectAllBoxes" type="checkbox"></th>
             <th>Id</th>
             <th>Author</th>
             <th>Title</th>
@@ -48,6 +49,12 @@
             $post_date = $row['post_date'];
 
             echo "<tr>";
+            ?>
+
+            <td><input class='checkBoxes' type='checkbox' name='checkBoxArray[]' value="<?php echo $post_id; ?>"></td>
+
+            <?php
+
             echo "<td>$post_id</td>";
             echo "<td>$post_author</td>";
             echo "<td>$post_title</td>";
