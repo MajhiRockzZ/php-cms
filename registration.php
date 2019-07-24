@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    echo $username = mysqli_real_escape_string($connection, $username);
+    $username = mysqli_real_escape_string($connection, $username);
     $email = mysqli_real_escape_string($connection, $email);
     $password = mysqli_real_escape_string($connection, $password);
 
@@ -16,6 +16,10 @@ if (isset($_POST['submit'])) {
 
     if (!$select_randsalt_query) {
         die("Query Failed" . mysqli_error($connection));
+    }
+
+    while ($row = mysqli_fetch_array($select_randsalt_query)) {
+        echo $salt = $row['randSalt'];
     }
 }
 ?>
