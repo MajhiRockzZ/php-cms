@@ -14,7 +14,7 @@
         <div class="col-md-8">
             <?php
 
-            $per_page = 2;
+            $per_page = 4;
 
             if (isset($_GET['page'])) {
 
@@ -53,14 +53,9 @@
 
                     ?>
 
-                    <h1 class="page-header">
-                        Page Heading
-                        <small>Secondary Text</small>
-                    </h1>
-
                     <!-- First Blog Post -->
 
-                    <h1><?php echo $count; ?></h1>
+                    <!-- <h1>--><?php //echo $count; ?><!--</h1>-->
 
                     <h2>
                         <a href="post.php?p_id=<?php echo $post_id ?>">
@@ -102,7 +97,11 @@
     <ul class="pager">
         <?php
         for ($i = 1; $i <= $count; $i++) {
-            echo "<li><a href='index.php?page={$i}'>{$i}</a></li>";
+            if ($i == $page) {
+                echo "<li><a class='active_link' href='index.php?page={$i}'>{$i}</a></li>";
+            } else {
+                echo "<li><a href='index.php?page={$i}'>{$i}</a></li>";
+            }
         }
         ?>
     </ul>

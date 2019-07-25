@@ -37,11 +37,6 @@
                         $post_image = $row['post_image'];
                         $post_content = $row['post_content'] ?>
 
-                        <h1 class="page-header">
-                            Page Heading
-                            <small>Secondary Text</small>
-                        </h1>
-
                         <!-- First Blog Post -->
                         <h2>
                             <a href="#">
