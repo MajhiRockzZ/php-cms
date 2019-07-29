@@ -30,3 +30,11 @@ $(document).ready(function () {
         $(this).remove();
     })
 });
+
+function loadUsersOnline() {
+    $.get("functions.php?onlineusers=result", function (data) {
+        $(".useronline").text(data);
+    });
+}
+
+loadUsersOnline();
