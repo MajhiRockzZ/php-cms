@@ -14,18 +14,20 @@ if (isset($_POST['submit'])) {
         $email = mysqli_real_escape_string($connection, $email);
         $password = mysqli_real_escape_string($connection, $password);
 
-        $query = "SELECT randSalt FROM users";
-        $select_randsalt_query = mysqli_query($connection, $query);
+        $password = password_hash('$password', PASSWORD_BCRYPT, array('cost' => 12));
 
-        if (!$select_randsalt_query) {
-            die("Query Failed" . mysqli_error($connection));
-        }
+        // $query = "SELECT randSalt FROM users";
+        // $select_randsalt_query = mysqli_query($connection, $query);
 
-        $row = mysqli_fetch_array($select_randsalt_query);
+        // if (!$select_randsalt_query) {
+        //     die("Query Failed" . mysqli_error($connection));
+        // }
 
-        $salt = $row['randSalt'];
+        // $row = mysqli_fetch_array($select_randsalt_query);
 
-        $password = crypt($password, $salt);
+        // $salt = $row['randSalt'];
+
+        // $password = crypt($password, $salt);
 
         $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
         $query .= "VALUES('{$username}','{$email}','{$password}','subscriber')";
@@ -64,22 +66,18 @@ if (isset($_POST['submit'])) {
 
                             <div class="form-group">
                                 <label for="username" class="sr-only">username</label>
-                                <input type="text" name="username" id="username" class="form-control"
-                                       placeholder="Enter Desired Username">
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Enter Desired Username">
                             </div>
                             <div class="form-group">
                                 <label for="email" class="sr-only">Email</label>
-                                <input type="email" name="email" id="email" class="form-control"
-                                       placeholder="somebody@example.com">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="sr-only">Password</label>
-                                <input type="password" name="password" id="key" class="form-control"
-                                       placeholder="Password">
+                                <input type="password" name="password" id="key" class="form-control" placeholder="Password">
                             </div>
 
-                            <input type="submit" name="submit" id="btn-login" class="btn btn-custom btn-lg btn-block"
-                                   value="Register">
+                            <input type="submit" name="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Register">
                         </form>
 
                     </div>
