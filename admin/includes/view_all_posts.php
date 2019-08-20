@@ -1,3 +1,5 @@
+
+
 <?php
 if (isset($_POST['checkBoxArray'])) {
     foreach ($_POST['checkBoxArray'] as $postValueId) {
@@ -139,7 +141,7 @@ if (isset($_POST['checkBoxArray'])) {
                 $count_comments = mysqli_num_rows($send_comment_query);
 
 
-                echo "<td><a href='comment.php?id=$comment_id'>$count_comments</a></td>";
+                echo "<td><a href='post_comments.php?id=$post_id'>$count_comments</a></td>";
 
 
 
