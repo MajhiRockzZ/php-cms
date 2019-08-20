@@ -18,7 +18,6 @@ if (isset($_SESSION['username'])) {
         $user_image = $row['user_image'];
         $user_role = $row['user_role'];
     }
-
 }
 ?>
 
@@ -45,7 +44,7 @@ if (isset($_POST['edit_user'])) {
 }
 ?>
 
-    <div id="wrapper">
+<div id="wrapper">
 
     <!-- Navigation -->
 
@@ -67,33 +66,13 @@ if (isset($_POST['edit_user'])) {
 
                         <div class="form-group">
                             <label for="title">First Name</label>
-                            <input type="text" value="<?php echo $user_firstname; ?>" class="form-control"
-                                   name="user_firstname">
+                            <input type="text" value="<?php echo $user_firstname; ?>" class="form-control" name="user_firstname">
                         </div>
 
                         <div class="form-group">
                             <label for="post_status">Last Name</label>
-                            <input type="text" value="<?php echo $user_lastname; ?>" class="form-control"
-                                   name="user_lastname">
+                            <input type="text" value="<?php echo $user_lastname; ?>" class="form-control" name="user_lastname">
                         </div>
-
-                        <div class="form-group">
-                            <select name="user_role" id="">
-                                <option value="subscriber"><?php echo $user_role; ?></option>
-                                <?php
-                                if ($user_role == 'admin') {
-                                    echo "<option value='subscriber'>subscriber</option>";
-                                } else {
-                                    echo "<option value='admin'>admin</option>";
-                                }
-                                ?>
-                            </select>
-                        </div>
-
-                        <!--    <div class="form-group">-->
-                        <!--        <label for="post_image">Post Image</label>-->
-                        <!--        <input type="file" class="form-control" name="image">-->
-                        <!--    </div>-->
 
                         <div class="form-group">
                             <label for="post_tags">Username</label>
@@ -102,14 +81,12 @@ if (isset($_POST['edit_user'])) {
 
                         <div class="form-group">
                             <label for="post_content">Email</label>
-                            <input type="email" value="<?php echo $user_email; ?>" class="form-control"
-                                   name="user_email">
+                            <input type="email" value="<?php echo $user_email; ?>" class="form-control" name="user_email">
                         </div>
 
                         <div class="form-group">
                             <label for="post_content">Password</label>
-                            <input type="password" value="<?php echo $user_password ?>" class="form-control"
-                                   name="user_password">
+                            <input autocomplete="off" type="password" class="form-control" name="user_password">
                         </div>
 
                         <div class="form-group">
@@ -127,4 +104,4 @@ if (isset($_POST['edit_user'])) {
 
     </div>
     <!-- /#page-wrapper -->
-<?php include "includes/admin_footer.php" ?>
+    <?php include "includes/admin_footer.php" ?>
