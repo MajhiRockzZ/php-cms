@@ -51,25 +51,25 @@ if (isset($_POST['checkBoxArray'])) {
 }
 ?>
 
-    <form action="" method="post">
+<form action="" method="post">
 
-        <table class="table table-bordered table-hover">
-            <div id="bulkOptionsContainer" class="col-xs-4">
-                <select class="form-control" name="bulk_options" id="">
-                    <option value="">Select Options</option>
-                    <option value="published">Publish</option>
-                    <option value="draft">Draft</option>
-                    <option value="delete">Delete</option>
-                    <option value="clone">Clone</option>
-                </select>
-            </div>
+    <table class="table table-bordered table-hover">
+        <div id="bulkOptionsContainer" class="col-xs-4">
+            <select class="form-control" name="bulk_options" id="">
+                <option value="">Select Options</option>
+                <option value="published">Publish</option>
+                <option value="draft">Draft</option>
+                <option value="delete">Delete</option>
+                <option value="clone">Clone</option>
+            </select>
+        </div>
 
-            <div class="col-xs-4">
-                <input type="submit" name="submit" class="btn btn-success" value="Apply">
-                <a href="posts.php?source=add_post" class="btn btn-primary">Add New</a>
-            </div>
+        <div class="col-xs-4">
+            <input type="submit" name="submit" class="btn btn-success" value="Apply">
+            <a href="posts.php?source=add_post" class="btn btn-primary">Add New</a>
+        </div>
 
-            <thead>
+        <thead>
             <tr>
                 <th><input id="selectAllBoxes" type="checkbox"></th>
                 <th>Id</th>
@@ -86,8 +86,8 @@ if (isset($_POST['checkBoxArray'])) {
                 <th>Delete</th>
                 <th>Post Views</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
 
             <?php
             $query = "SELECT * FROM posts ORDER BY post_id DESC";
@@ -108,10 +108,10 @@ if (isset($_POST['checkBoxArray'])) {
                 echo "<tr>";
                 ?>
 
-                <td><input class='checkBoxes' type='checkbox' name='checkBoxArray[]' value="<?php echo $post_id; ?>">
-                </td>
+            <td><input class='checkBoxes' type='checkbox' name='checkBoxArray[]' value="<?php echo $post_id; ?>">
+            </td>
 
-                <?php
+            <?php
 
                 echo "<td>$post_id</td>";
                 echo "<td>$post_author</td>";
@@ -130,7 +130,16 @@ if (isset($_POST['checkBoxArray'])) {
                 echo "<td>$post_status</td>";
                 echo "<td><img class='img-responsive' width='100' src='../images/$post_image'></td>";
                 echo "<td>$post_tags</td>";
-                echo "<td>$post_comment_count</td>";
+
+                $query = "SELECT * FROM comments WHERE comment_post_id = $post_id";
+                $send_comment_query = mysqli_query($connection, $query);
+                $count_comments = mysqli_num_rows($send_comment_query);
+
+
+                echo "<td><a href=''>$count_comments</a></td>";
+
+
+
                 echo "<td>$post_date</td>";
                 echo "<td><a href='../post.php?p_id={$post_id}'>View Post</a></td>";
                 echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
@@ -139,9 +148,9 @@ if (isset($_POST['checkBoxArray'])) {
                 echo "</tr>";
             }
             ?>
-            </tbody>
-        </table>
-    </form>
+        </tbody>
+    </table>
+</form>
 
 <?php
 if (isset($_GET['delete'])) {
